@@ -1,8 +1,8 @@
 using System;
 using MySql.Data.MySqlClient;
-using DoctorsOffice;
+using Library;
 
-namespace DoctorsOffice.Models
+namespace Library.Models
 {
   public class DB
   {

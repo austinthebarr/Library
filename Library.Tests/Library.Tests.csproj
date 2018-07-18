@@ -9,7 +9,7 @@
     <PackageReference Include="MySqlConnector" Version="0.42.3" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DoctorsOffice\DoctorsOffice.csproj" />
+    <ProjectReference Include="..\Library\Library.csproj" />
   </ItemGroup>
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="1.0.0-msbuild2-final" />
