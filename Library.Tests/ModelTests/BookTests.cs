@@ -10,6 +10,7 @@ namespace Library.Tests
   {
     public void Dispose()
     {
+      Author.DeleteAll();
       Book.DeleteAll();
     }
     public  BookTests()
@@ -70,5 +71,24 @@ namespace Library.Tests
       //Arrange
       Assert.AreEqual(foundBook, firstBook);
     }
- }
+
+    [TestMethod]
+    public void AddAuthor_AddsAuthorToBook_AuthorList()
+    {
+      //Arrange
+      Book testBook = new Book("Learn How To", "Education", 1);
+      testBook.Save();
+      Author testAuthor = new Author("K. Cobain");
+      testAuthor.Save();
+
+      //Act
+      testBook.AddAuthor(testAuthor);
+
+      List<Author> result = testBook.GetAuthors();
+      List<Author> testList = new List<Author>{testAuthor};
+    
+      //Assert
+      CollectionAssert.AreEqual(testList, result);
+    }
+  }
 }
