@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Libary</title>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+</head>
+<body>
+  <div class= "jumbotron">
+    <h1 class="bigFont">Library</h1>
+  </div>
+
+  <form action="/author/{id}/add/" method="post">
+
+    <label for="newauthor">Select an Author</label>
+    <select class="selectAuthor" name="newauthor">
+      @foreach (var newauthors in Model)
+      {
+      <option value="@newauthors.GetId()">@newauthors.GetName()</option>
+      }
+    </select>
+    <button type="submit">Submit</button>
+  </form>
+
+</body>
+</html>

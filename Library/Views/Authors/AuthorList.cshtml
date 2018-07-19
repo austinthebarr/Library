@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Libary</title>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+</head>
+<body>
+  <div class= "jumbotron">
+    <h1 class="bigFont">Library</h1>
+  </div>
+
+  <h1>Author List</h1>
+  @foreach(var authors in Model)
+  {
+    <li>
+      <b>Name: </b>@authors.GetName()
+    </li>
+  }
+<br>
+  <a href="/">Home</a>
+</body>
+</html>

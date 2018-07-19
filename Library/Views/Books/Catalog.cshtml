@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Libary</title>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+</head>
+<body>
+  <div class= "jumbotron">
+    <h1 class="bigFont">Library</h1>
+  </div>
+  <ul>
+  @foreach(var books in Model)
+  {
+    <li>
+      <b>Title:</b> @books.GetTitle() | <a href="/author/@books.GetId()/add">Add Author</a>
+    </li>
+    <!-- <li>
+      <a href="/author/@books.GetId()/add"> <b>Title:</b> @books.GetTitle() <b>Genre:</b> @books.GetGenre() <b>Available copies</b> @books.GetInventory()</a>
+    </li> -->
+  }
+
+  </ul>
+
+</body>
+</html>

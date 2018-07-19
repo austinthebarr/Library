@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Libary</title>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+</head>
+<body>
+  <div class= "jumbotron">
+    <h1 class="bigFont">Library</h1>
+  </div>
+
+  <h1>BOOKS</h1>
+
+  <form action="/book/add" method="post">
+    <label for="newbook">Add a new book</label>
+    <input id="newbook" name="newbook" type="text" required><br>
+
+    <label for="newgenre">Add Genre of the book</label>
+    <input id="newgenre" name="newgenre" type="text" required><br>
+
+    <label for="newinventory">Add number of copies</label>
+    <input id="newinventory" name="newinventory" type="number" required><br>
+
+
+
+
+    <button type="submit">Submit</button>
+  </form>
+
+</body>
+</html>
