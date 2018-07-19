@@ -1,3 +1,4 @@
+@using Library.Models;
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +16,7 @@
     <select class="selectAuthor" name="newauthor">
       @foreach (var newauthors in Model)
       {
-      <option value="@newauthors.GetId()">@newauthors.GetName()</option>
+      <option value="@newauthors">@newauthors.GetName()</option>
       }
     </select>
     <button type="submit">Submit</button>

@@ -33,7 +33,13 @@ namespace Libary.Controllers
 
       return View(allAuthors);
     }
-    // [HttpPost("/author/{id}/add")]
-    // public ActionResult
+    [HttpPost("/author/{id}/add")]
+    public ActionResult CollectAuthorForBook(int id)
+    {
+      Author newAuthor = new Author(Request.Form["newauthor"]);
+      Book thisBook = Book.FindBook(id);
+      thisBook.AddAuthor(newAuthor);
+      return RedirectToAction("Catalog");
+    }
   }
 }
