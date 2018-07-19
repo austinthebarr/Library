@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using Library.Models;
+using System;
 
 namespace Libary.Controllers
 {
@@ -28,15 +29,20 @@ namespace Libary.Controllers
     [HttpGet("/author/{id}/add")]
     public ActionResult AddAuthor(int id)
     {
+      Dictionary<string,object> model = new Dictionary<string,object>{};
       Book thisBook = Book.FindBook(id);
       List<Author> allAuthors = Author.GetAllAuthors();
+      model.Add("bookid", id);
+      model.Add("authors", allAuthors);
 
-      return View(allAuthors);
+
+      return View(model);
     }
     [HttpPost("/author/{id}/add")]
     public ActionResult CollectAuthorForBook(int id)
     {
-      Author newAuthor = new Author(Request.Form["newauthor"]);
+      Console.WriteLine(id);
+      Author newAuthor = Author.FindAuthor(int.Parse(Request.Form["newauthor"]));
       Book thisBook = Book.FindBook(id);
       thisBook.AddAuthor(newAuthor);
       return RedirectToAction("Catalog");
